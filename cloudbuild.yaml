@@ -1,5 +1,9 @@
      steps:
+     - name: 'gcr.io/cloud-builders/mvn'       
+          entrypoint: mvn        
+          args: ['package','-Dmaven.test.skip=true']
     - name: 'gcr.io/cloud-builders/gcloud'
+         entrypoint: /bin/bash
        args: ['compute', 'ssh', 'instance-1', '--project=35.225.43.231', '--zone=us-central1-a', '--command=./deploy.sh']
      substitutions:
        _SQL_USER: root
