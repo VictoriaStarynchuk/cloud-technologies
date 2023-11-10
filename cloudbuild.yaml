@@ -1,18 +1,16 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: /bin/bash
+  entrypoint: '/bin/bash'
   args:
     - '-c'
     - |
       gcloud compute ssh instance-1 \
-        --project=35.225.43.231 \
+        --project=34.122.138.163 \
         --zone=us-central1-a \
         --command="./deploy.sh"
-options:
-  substitutionOption:
-    dynamicSubstitutions: true
+
 substitutions:
-  _SQL_USER: root
+  _SQL_USER: 'root'
   _SQL_PASSWORD: 'victoriast2510#'
-  _DB_NAME: starynchuk
+  _DB_NAME: 'starynchuk'
   _INSTANCE_CONNECTION_NAME: 'clouds-labs-403019:us-central1:root'
