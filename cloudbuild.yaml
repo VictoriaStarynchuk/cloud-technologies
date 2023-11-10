@@ -7,4 +7,4 @@ steps:
       gcloud compute ssh instance-1 \
         --project=clouds-labs-403019 \
         --zone=us-central1-a \
-        --command="~/deploy.sh"
+        --command="/home/viktoriia_starynchuk_ir_2021/deploy.sh"
