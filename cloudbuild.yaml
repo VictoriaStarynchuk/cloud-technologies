@@ -1,5 +1,9 @@
      steps:
-     - name: maven:3.3-jdk-8
-       entrypoint: mvn
-       args: ['package','-Dmaven.test.skip=true']
-      
+    - name: 'gcr.io/cloud-builders/gcloud'
+       args: ['compute', 'ssh', 'instance-1', '--project=35.225.43.231', '--zone=us-central1-a', '--command=./deploy.sh']
+     substitutions:
+       _SQL_USER: root
+       _SQL_PASSWORD: victoriast2510#
+       _DB_NAME: starynchuk
+       _INSTANCE_CONNECTION_NAME: clouds-labs-403019:us-central1:root
+
